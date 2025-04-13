@@ -6,14 +6,6 @@ const server = require('./server');
 // Set up commander for CLI args
 const program = new Command();
 
-// Builder cache path
-const cacheDir = path.join(process.cwd(), '.cache');
-
-// Make sure cache directory is made if not create
-if (!fs.existsSync(cacheDir)) {
-    fs.mkdirSync(cacheDir);
-}
-
 // Program description setup
 program
     .name('caching-proxy')
@@ -50,6 +42,5 @@ server.start(
     {
         port: options.port,
         origin: options.origin,
-        cacheDir: cacheDir
     }
 )

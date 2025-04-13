@@ -3,6 +3,7 @@ const axios = require('axios');
 const NodeCache = require('node-cache');
 const path = require('path');
 const fs = require('fs');
+const Redis = require('redis');
 
 // Build in-memory cache
 const memoryCache = new NodeCache({stdTTL: 100, checkperiod: 200});
